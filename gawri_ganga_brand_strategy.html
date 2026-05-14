@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gawri Ganga — Brand Strategy Report</title>
+<style>
+  :root {
+    --primary: #5C3D2E;
+    --accent: #C9935A;
+    --accent-light: #F5EAD7;
+    --gold: #D4AF37;
+    --deep: #2C1810;
+    --surface: #FDFAF6;
+    --surface2: #F5EFE6;
+    --text: #1A1208;
+    --text2: #5A4A3A;
+    --text3: #8A7060;
+    --border: #E8D9C8;
+    --teal: #1D7A6E;
+    --teal-light: #E0F5F2;
+    --purple: #6B4FA0;
+    --purple-light: #EDE8F5;
+    --coral: #C25B3A;
+    --coral-light: #FAEDE8;
+    --green: #3A7A45;
+    --green-light: #E5F5E8;
+    --radius: 10px;
+    --radius-lg: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* HEADER */
+  .cover {
+    background: var(--deep);
+    color: #F5EAD7;
+    padding: 56px 48px 48px;
+    border-bottom: 4px solid var(--gold);
+  }
+  .cover-eyebrow {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .cover-title {
+    font-size: 38px;
+    font-weight: normal;
+    color: #F5EAD7;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .cover-sub {
+    font-size: 16px;
+    color: #C9B090;
+    margin-bottom: 28px;
+  }
+  .cover-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .tag {
+    background: rgba(201,147,90,0.2);
+    border: 1px solid rgba(201,147,90,0.4);
+    color: var(--accent);
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* NAV */
+  .toc {
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 48px;
+    display: flex; flex-wrap: wrap; gap: 4px 24px;
+  }
+  .toc a {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: var(--text2);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+  .toc a:hover { color: var(--accent); }
+  .toc-num {
+    color: var(--accent);
+    margin-right: 4px;
+    font-weight: bold;
+  }
+
+  /* SECTIONS */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 52px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-header {
+    display: flex; align-items: flex-start; gap: 16px;
+    margin-bottom: 32px;
+  }
+  .section-num {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    padding-top: 6px;
+    min-width: 80px;
+  }
+  .section-title {
+    font-size: 26px;
+    font-weight: normal;
+    color: var(--deep);
+    line-height: 1.3;
+  }
+
+  /* TYPOGRAPHY */
+  h3 {
+    font-size: 17px;
+    font-weight: normal;
+    color: var(--primary);
+    margin: 28px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  h4 {
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px 0 8px;
+  }
+  p { margin-bottom: 14px; color: var(--text2); }
+
+  /* INSIGHT BOX */
+  .insight {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 14px 18px;
+    margin: 18px 0;
+    font-style: italic;
+    color: var(--primary);
+    font-size: 14.5px;
+  }
+
+  /* GRID CARDS */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+  }
+  .card-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+  }
+  .card-body {
+    font-size: 13.5px;
+    color: var(--text2);
+    line-height: 1.65;
+  }
+  .card.teal { border-top: 3px solid var(--teal); }
+  .card.teal .card-title { color: var(--teal); }
+  .card.purple { border-top: 3px solid var(--purple); }
+  .card.purple .card-title { color: var(--purple); }
+  .card.coral { border-top: 3px solid var(--coral); }
+  .card.coral .card-title { color: var(--coral); }
+  .card.gold { border-top: 3px solid var(--gold); }
+  .card.gold .card-title { color: #9A7A20; }
+  .card.green { border-top: 3px solid var(--green); }
+  .card.green .card-title { color: var(--green); }
+  .card.primary { border-top: 3px solid var(--primary); }
+  .card.primary .card-title { color: var(--primary); }
+
+  /* PRODUCT TABLE */
+  .product-block {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  .product-header {
+    background: var(--deep);
+    color: #F5EAD7;
+    padding: 14px 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .product-icon {
+    font-size: 20px;
+  }
+  .product-name {
+    font-size: 16px;
+  }
+  .product-badge {
+    margin-left: auto;
+    background: var(--accent);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .product-body {
+    padding: 18px 20px;
+  }
+  .product-row {
+    display: flex; gap: 8px; margin-bottom: 10px; align-items: flex-start;
+  }
+  .product-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text3);
+    min-width: 130px;
+    padding-top: 2px;
+  }
+  .product-value {
+    font-size: 13.5px;
+    color: var(--text2);
+  }
+
+  /* PERSONA CARDS */
+  .persona {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .persona-header {
+    padding: 16px 20px 12px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .persona-avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .persona-meta h3 {
+    font-size: 17px;
+    border: none;
+    padding: 0;
+    margin: 0 0 4px;
+    color: var(--deep);
+  }
+  .persona-meta .sub {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: var(--text3);
+  }
+  .persona-body {
+    padding: 0 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    margin: 0 20px 20px;
+  }
+  .persona-section h4 {
+    margin: 0 0 6px;
+    font-size: 11px;
+  }
+  .persona-section p {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  /* PILLS */
+  .pill-group { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+  .pill {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid;
+  }
+  .pill.teal { background: var(--teal-light); border-color: #9BD4CE; color: #0F5A54; }
+  .pill.purple { background: var(--purple-light); border-color: #B8A8D8; color: #4A3070; }
+  .pill.coral { background: var(--coral-light); border-color: #E8B8A8; color: #8A3020; }
+  .pill.gold { background: #FDF3DC; border-color: #E8C878; color: #7A5A10; }
+  .pill.green { background: var(--green-light); border-color: #A8D0B0; color: #285030; }
+  .pill.gray { background: #F5F3F0; border-color: #D5D0C8; color: #5A5248; }
+
+  /* TARGETING TABLE */
+  .target-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 16px 0;
+  }
+  .target-table th {
+    background: var(--deep);
+    color: #F5EAD7;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  .target-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text2);
+    vertical-align: top;
+  }
+  .target-table tr:last-child td { border-bottom: none; }
+  .target-table tr:nth-child(even) td { background: var(--surface2); }
+  .priority-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .dot-high { background: var(--green); }
+  .dot-med { background: var(--gold); }
+  .dot-low { background: var(--text3); }
+
+  /* STRATEGY PILLARS */
+  .pillar {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    margin-bottom: 14px;
+    display: flex; gap: 18px; align-items: flex-start;
+  }
+  .pillar-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    border: 1px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+  .pillar-content h4 { margin: 0 0 6px; font-size: 15px; text-transform: none; letter-spacing: 0; color: var(--deep); }
+  .pillar-content p { font-size: 13.5px; margin: 0; }
+
+  /* ROAS TABLE */
+  .score-bar {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .bar {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--accent);
+    display: inline-block;
+  }
+  .bar-bg {
+    flex: 1;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--border);
+    position: relative;
+    max-width: 120px;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--accent);
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--deep);
+    color: #C9B090;
+    padding: 28px 48px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* ALERT / CALLOUT */
+  .callout {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 16px 0;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .callout-icon { font-size: 18px; flex-shrink: 0; }
+  .callout-body { font-size: 13.5px; color: var(--text2); }
+  .callout.success { background: var(--green-light); border-color: #B0D8B8; }
+  .callout.warning { background: #FDF3DC; border-color: #E8C878; }
+  .callout.info { background: var(--teal-light); border-color: #9BD4CE; }
+
+  @media (max-width: 600px) {
+    .cover, .toc, .section { padding-left: 20px; padding-right: 20px; }
+    .cover-title { font-size: 26px; }
+    .section-header { flex-direction: column; gap: 6px; }
+    .section-num { min-width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <p class="cover-eyebrow">D2C Brand Strategy Report</p>
+  <h1 class="cover-title">Gawri Ganga</h1>
+  <p class="cover-sub">Deep Brand, Audience & Performance Marketing Analysis</p>
+  <div class="cover-tags">
+    <span class="tag">Brand Strategy</span>
+    <span class="tag">Buyer Psychology</span>
+    <span class="tag">Audience Analysis</span>
+    <span class="tag">Meta Ads Targeting</span>
+    <span class="tag">Content Strategy</span>
+    <span class="tag">D2C Growth</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<nav class="toc">
+  <a href="#brand"><span class="toc-num">01</span> Brand Understanding</a>
+  <a href="#products"><span class="toc-num">02</span> Product Analysis</a>
+  <a href="#audience"><span class="toc-num">03</span> Target Audience</a>
+  <a href="#meta"><span class="toc-num">04</span> Meta Ads Strategy</a>
+  <a href="#psychology"><span class="toc-num">05</span> Buyer Psychology</a>
+</nav>
+
+<!-- SECTION 1: BRAND -->
+<section class="section" id="brand">
+  <div class="section-header">
+    <div class="section-num">Section 01</div>
+    <h2 class="section-title">Brand Understanding</h2>
+  </div>
+
+  <div class="insight">
+    Gawri Ganga sits at the intersection of devotion, identity, and self-transformation — selling not just products, but a way of being. It is a spiritual lifestyle brand with strong roots in Hindu tradition but aspirational enough to attract modern wellness seekers.
+  </div>
+
+  <h3>What kind of brand is this?</h3>
+  <p>Gawri Ganga is a <strong>spiritual lifestyle and wellness brand</strong> rooted in ancient Hindu symbolism — particularly the Ganga river, Goddess Gauri (Parvati), and Shaivite tradition. The brand name itself carries immense spiritual weight: the pairing of Gauri (the divine feminine, purity, devotion) and Ganga (the sacred river, liberation, cleansing) signals a brand that isn't simply transactional — it is an offering, a sacred expression. This is not a generic "spiritual accessories" shop. It is a brand with a distinct mythological identity that can inspire deep emotional loyalty.</p>
+
+  <h3>Brand positioning map</h3>
+  <div class="grid-3">
+    <div class="card primary">
+      <div class="card-title">Core positioning</div>
+      <div class="card-body">Sacred spiritual lifestyle. Devotion meets modern wellness. Ancient wisdom, contemporary expression.</div>
+    </div>
+    <div class="card teal">
+      <div class="card-title">Primary emotion</div>
+      <div class="card-body">Protection, peace, and spiritual identity. The feeling of being held, guided, and aligned.</div>
+    </div>
+    <div class="card gold">
+      <div class="card-title">Lifestyle promoted</div>
+      <div class="card-body">Conscious, intentional living. Ritual, mindfulness, and energetic awareness as daily practice.</div>
+    </div>
+    <div class="card purple">
+      <div class="card-title">Brand archetype</div>
+      <div class="card-body">The Sage meets The Caregiver. Wise, nurturing, rooted in tradition yet accessible and modern.</div>
+    </div>
+    <div class="card coral">
+      <div class="card-title">Trust signals needed</div>
+      <div class="card-body">Authenticity of sourcing, spiritual lineage, founder story, quality certification of Rudraksha beads.</div>
+    </div>
+    <div class="card green">
+      <div class="card-title">Optimal positioning</div>
+      <div class="card-body">Premium spiritual wellness — not mass market, not ultra-luxury. The sweet spot of reverence + accessibility.</div>
+    </div>
+  </div>
+
+  <h3>What emotions is the brand selling?</h3>
+  <p>The brand sells a constellation of deeply personal emotions. <strong>Protection</strong> — the sense that wearing a Rudraksha mala shields you from negative energy. <strong>Identity</strong> — expressing one's spiritual self through wearable, visible devotion. <strong>Peace</strong> — the promise of inner calm in an anxious, noisy world. <strong>Belonging</strong> — joining a lineage of seekers, saints, and sadhus who have worn these beads for millennia. <strong>Transformation</strong> — the aspiration to become a more conscious, aligned, elevated version of oneself.</p>
+
+  <h3>Is the branding premium enough?</h3>
+  <div class="callout warning">
+    <div class="callout-icon">⚠</div>
+    <div class="callout-body"><strong>Brand premium gap is a key risk.</strong> The spiritual wellness space in India has bifurcated: ultra-cheap unorganised market vs. premium brands like Namo Banaras, The Sattvic Path, or Kama Ayurveda. Gawri Ganga's brand language, photography quality, and packaging need to clearly signal the premium tier. If visual identity looks similar to a bazaar vendor, premium pricing becomes impossible to hold and conversion rates on ads will suffer. The brand name and mythology are premium — the execution must match.</div>
+  </div>
+
+  <h3>What makes the brand trustworthy?</h3>
+  <div class="grid-2">
+    <div class="card green">
+      <div class="card-title">Trust builders</div>
+      <div class="card-body">
+        Authentic Rudraksha sourcing with Nepal/Indonesia origin story<br><br>
+        Founder's personal spiritual journey and credentials<br><br>
+        Customer transformation testimonials<br><br>
+        Mukhi (face) certification and product education content<br><br>
+        Ritualistic unboxing and packaging quality<br><br>
+        Association with recognised saints, priests, or spiritual teachers
+      </div>
+    </div>
+    <div class="card coral">
+      <div class="card-title">Trust destroyers</div>
+      <div class="card-body">
+        Generic product photography without context<br><br>
+        No sourcing or authenticity story told<br><br>
+        Low-quality packaging that feels commercial<br><br>
+        Inconsistent brand voice (mixing casual with sacred tone)<br><br>
+        No educational content about Mukhi significance<br><br>
+        Over-discounting (destroys premium spiritual positioning)
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: PRODUCTS -->
+<section class="section" id="products">
+  <div class="section-header">
+    <div class="section-num">Section 02</div>
+    <h2 class="section-title">Product Analysis</h2>
+  </div>
+
+  <div class="insight">
+    Each product in this portfolio solves a spiritual or emotional need at a different intensity level. Understanding which need each product addresses determines which audience, ad angle, and creative format will convert best.
+  </div>
+
+  <!-- Rudraksha Malas -->
+  <div class="product-block">
+    <div class="product-header">
+      <span class="product-icon">📿</span>
+      <span class="product-name">Rudraksha Malas</span>
+      <span class="product-badge">Bestseller Potential</span>
+    </div>
+    <div class="product-body">
+      <div class="product-row">
+        <span class="product-label">Problem solved</span>
+        <span class="product-value">Spiritual disconnect, anxiety, lack of protection, desire for tangible devotional practice. Many buyers feel spiritually adrift and want something physical that anchors them.</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Emotional desire</span>
+        <span class="product-value">To feel divinely protected, spiritually serious, and visibly devoted. Also: status within spiritual/wellness communities.</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Purchase type</span>
+        <span class="product-value">Consideration purchase (5–14 day window). High intent research. Buyers compare Mukhi, source, price, and brand reputation before buying.</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Primary drivers</span>
+        <span class="product-value">Faith (primary), energy belief, aesthetic identity (secondary), gifting (tertiary)</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Pain points</span>
+        <span class="product-value">Fear of fake Rudraksha in market, unsure which Mukhi suits them, don't know sourcing quality</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Emotional triggers</span>
+        <span class="product-value">Authenticity proof, Mukhi benefit explanation, before/after testimonials (life transformation after wearing), ritual energy photography</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Meta ads suitability</span>
+        <span class="product-value">⭐⭐⭐⭐⭐ Extremely high. Video explaining Mukhi benefits + testimonial overlay converts well in retargeting. Education-first cold audience ads.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bracelets -->
+  <div class="product-block">
+    <div class="product-header">
+      <span class="product-icon">⌚</span>
+      <span class="product-name">Rudraksha & Spiritual Bracelets</span>
+      <span class="product-badge">Impulse Entry Point</span>
+    </div>
+    <div class="product-body">
+      <div class="product-row">
+        <span class="product-label">Problem solved</span>
+        <span class="product-value">Desire for wearable spirituality at an accessible price point. Also fashion-spiritual fusion: looks good, means something.</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Emotional desire</span>
+        <span class="product-value">Identity expression. "I am spiritual but also stylish." Belonging to a conscious community through a visible marker.</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Purchase type</span>
+        <span class="product-value">Semi-impulse (under ₹1500). Fastest-converting product in the range. High AOV opportunity through bundling.</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Primary drivers</span>
+        <span class="product-value">Aesthetics + spiritual identity + trend (Gen Z, millennials) + gifting</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Emotional triggers</span>
+        <span class="product-value">Styling content, "wear it everywhere" lifestyle photography, stacking combinations, celebrity/influencer wearing it</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Meta ads suitability</span>
+        <span class="product-value">⭐⭐⭐⭐⭐ Best product for cold audience acquisition. Low friction, impulse price, strong visual appeal. Use as hero product for TOFU campaigns.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aura Sprays -->
+  <div class="product-block">
+    <div class="product-header">
+      <span class="product-icon">✨</span>
+      <span class="product-name">Aura Sprays</span>
+      <span class="product-badge">High Frequency Repurchase</span>
+    </div>
+    <div class="product-body">
+      <div class="product-row">
+        <span class="product-label">Problem solved</span>
+        <span class="product-value">Energetic cleansing, negative energy removal, mood elevation, and ritualistic daily practice. Bridges wellness and spirituality perfectly.</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Emotional desire</span>
+        <span class="product-value">Daily ritual of protection and alignment. Feeling "energetically clean" in a world of chaos, EMF, and negativity. Aromatherapy + energy work combined.</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Purchase type</span>
+        <span class="product-value">Semi-impulse to impulse. Accessible price. Critical: this is a REPEAT PURCHASE product — highest LTV potential in the catalogue. Focus on subscription / repurchase flows.</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Primary drivers</span>
+        <span class="product-value">Energy belief, ritual lifestyle, home wellness, gifting (excellent gift item). Also: modern witchy/spiritual aesthetic trend.</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Pain points</span>
+        <span class="product-value">Feeling energetically heavy, anxious in spaces, after arguments, after crowded places (markets, metros), spiritual depletion</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Best ad creative</span>
+        <span class="product-value">ASMR-style ritual use video (misting, intention-setting), "before and after energy" storytelling, morning routine integration, "cleanse your space" UGC</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Meta ads suitability</span>
+        <span class="product-value">⭐⭐⭐⭐ Excellent for modern wellness audience. Easiest bridge product between spiritual and non-spiritual buyers. TOFU and retargeting both work.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Healing / Meditation Products -->
+  <div class="product-block">
+    <div class="product-header">
+      <span class="product-icon">🧘</span>
+      <span class="product-name">Healing & Meditation Products</span>
+      <span class="product-badge">High AOV Segment</span>
+    </div>
+    <div class="product-body">
+      <div class="product-row">
+        <span class="product-label">Problem solved</span>
+        <span class="product-value">Deepening meditation practice, energetic alignment, chakra healing, crystal energy work. Serves committed spiritual practitioners.</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Purchase type</span>
+        <span class="product-value">Consideration to high-consideration. Buyers research extensively. Often purchased as part of a spiritual upgrade or life transition (move, breakup, health crisis, spiritual awakening).</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Emotional triggers</span>
+        <span class="product-value">Life transition storytelling, "my spiritual journey" content, healer endorsements, before/after emotional transformations</span>
+      </div>
+      <div class="product-row">
+        <span class="product-label">Best for</span>
+        <span class="product-value">Retargeting warm audiences, email nurture sequences, influencer partnerships with spiritual teachers/yoga instructors</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>Cold audience vs retargeting product strategy</h3>
+  <div class="grid-2">
+    <div class="card green">
+      <div class="card-title">🎯 Best for cold audience ads</div>
+      <div class="card-body">
+        <strong>Bracelets</strong> — impulse, visual, low friction<br><br>
+        <strong>Aura sprays</strong> — curiosity hook, modern concept<br><br>
+        <strong>1 Mukhi / 5 Mukhi malas</strong> with education-first angle<br><br>
+        <em>Lead with benefits, lifestyle, and curiosity. Not product features.</em>
+      </div>
+    </div>
+    <div class="card purple">
+      <div class="card-title">🔄 Best for retargeting</div>
+      <div class="card-body">
+        <strong>Full Rudraksha malas</strong> — after education warm-up<br><br>
+        <strong>Healing/meditation kits</strong> — committed seeker<br><br>
+        <strong>Premium sets & combos</strong> — upsell to engaged visitors<br><br>
+        <em>Lead with testimonials, transformation, and scarcity.</em>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: AUDIENCE -->
+<section class="section" id="audience">
+  <div class="section-header">
+    <div class="section-num">Section 03</div>
+    <h2 class="section-title">Ideal Target Audience Analysis</h2>
+  </div>
+
+  <div class="insight">
+    Gawri Ganga's audience is not one person — it is a spectrum of spiritually-oriented identities. Understanding each persona's specific trigger to buy is the key to writing ads that convert without feeling pushy.
+  </div>
+
+  <!-- Persona 1 -->
+  <div class="persona">
+    <div class="persona-header">
+      <div class="persona-avatar" style="background:#E8F5F0; color: var(--teal);">🙏</div>
+      <div class="persona-meta">
+        <h3>The Devotee Seeker</h3>
+        <span class="sub">Age 28–50 · Tier 1 & 2 cities · Faith-driven · Monthly budget ₹2,000–₹8,000</span>
+      </div>
+    </div>
+    <div class="persona-body">
+      <div class="persona-section">
+        <h4>What they want</h4>
+        <p>Authentic, spiritually potent products. Genuine Rudraksha blessed by tradition. A brand they can trust as much as their pandit.</p>
+      </div>
+      <div class="persona-section">
+        <h4>What they fear</h4>
+        <p>Buying fake Rudraksha and inviting bad karma. Being spiritually deceived by a commercial brand.</p>
+      </div>
+      <div class="persona-section">
+        <h4>Ad angle that converts</h4>
+        <p>"Sourced from Nepal's sacred forests, energised through Vedic ritual — this is not just a mala. It is a lineage."</p>
+      </div>
+      <div class="persona-section">
+        <h4>Creative format</h4>
+        <p>Ritual ceremony video, sourcing story reel, pandit testimonial, scripture reference content</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Persona 2 -->
+  <div class="persona">
+    <div class="persona-header">
+      <div class="persona-avatar" style="background:#EDE8F5; color: var(--purple);">🌙</div>
+      <div class="persona-meta">
+        <h3>The Modern Wellness Woman</h3>
+        <span class="sub">Age 22–38 · Urban metros · Instagram-native · Budget ₹1,500–₹5,000</span>
+      </div>
+    </div>
+    <div class="persona-body">
+      <div class="persona-section">
+        <h4>What they want</h4>
+        <p>Spiritual products that fit her aesthetic. Something that looks as good as it feels meaningful. Validation from community.</p>
+      </div>
+      <div class="persona-section">
+        <h4>What they fear</h4>
+        <p>Looking "too religious" or unsophisticated. Buying something that doesn't match her vibe or Instagram-worthy aesthetic.</p>
+      </div>
+      <div class="persona-section">
+        <h4>Ad angle that converts</h4>
+        <p>"Your spiritual era begins here." Lifestyle-first. Show the product in her world — yoga mat, morning coffee, journaling, travel.</p>
+      </div>
+      <div class="persona-section">
+        <h4>Creative format</h4>
+        <p>Morning routine reel, "spiritual girl autumn" aesthetic, influencer flat lay, GRWM with spiritual products, Pinterest-worthy content</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Persona 3 -->
+  <div class="persona">
+    <div class="persona-header">
+      <div class="persona-avatar" style="background:#FDF3DC; color: #8A5A10;">👑</div>
+      <div class="persona-meta">
+        <h3>The Luxury Spiritual Buyer</h3>
+        <span class="sub">Age 35–60 · HNI · Status + spirituality · Budget ₹10,000–₹50,000+</span>
+      </div>
+    </div>
+    <div class="persona-body">
+      <div class="persona-section">
+        <h4>What they want</h4>
+        <p>Rarity, exclusivity, premium quality. 1 Mukhi or rare Rudraksha. Custom orders. Gift-worthy presentation. Product as status symbol in spiritual circles.</p>
+      </div>
+      <div class="persona-section">
+        <h4>What they fear</h4>
+        <p>Being given a common product. Getting something that is not rare or authentic. Gifting something that reflects poorly on them.</p>
+      </div>
+      <div class="persona-section">
+        <h4>Ad angle that converts</h4>
+        <p>"Reserved for those who understand its rarity." Scarcity, exclusivity, lineage. Certificate of authenticity. Limited quantity messaging.</p>
+      </div>
+      <div class="persona-section">
+        <h4>Creative format</h4>
+        <p>Premium unboxing video, expert authentication content, gifting campaign, "the rarest Rudraksha explained" educational series</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Persona 4 -->
+  <div class="persona">
+    <div class="persona-header">
+      <div class="persona-avatar" style="background:#E0F5F2; color: var(--teal);">🧘</div>
+      <div class="persona-meta">
+        <h3>The Yoga & Meditation Practitioner</h3>
+        <span class="sub">Age 25–45 · Urban · Practice-oriented · Budget ₹2,000–₹10,000</span>
+      </div>
+    </div>
+    <div class="persona-body">
+      <div class="persona-section">
+        <h4>What they want</h4>
+        <p>Tools that deepen their practice. Malas for japa meditation. Aura sprays for space cleansing. Products that are functional in their sadhana.</p>
+      </div>
+      <div class="persona-section">
+        <h4>What they fear</h4>
+        <p>Inauthentic products that are "just for show." Brands that commercialise sacred practice without understanding it.</p>
+      </div>
+      <div class="persona-section">
+        <h4>Ad angle that converts</h4>
+        <p>"108 beads. 108 mantras. One intention." Functionality + depth. Show real practice, not just aesthetics.</p>
+      </div>
+      <div class="persona-section">
+        <h4>Creative format</h4>
+        <p>Meditation use-case video, pranayama + mala reel, "how to do japa with a mala" tutorial, collaboration with yoga teachers</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Persona 5 -->
+  <div class="persona">
+    <div class="persona-header">
+      <div class="persona-avatar" style="background:#FAEDE8; color: var(--coral);">⚡</div>
+      <div class="persona-meta">
+        <h3>Gen Z Spiritual Trend Seeker</h3>
+        <span class="sub">Age 18–27 · All cities · Trend-driven · Budget ₹500–₹2,500</span>
+      </div>
+    </div>
+    <div class="persona-body">
+      <div class="persona-section">
+        <h4>What they want</h4>
+        <p>Spiritual identity expression that's cool and aesthetic. Crystals, aura cleansing, manifestation, bracelets. Something shareable on Instagram/Reels.</p>
+      </div>
+      <div class="persona-section">
+        <h4>What they fear</h4>
+        <p>Being out of the spiritual trend. Missing a product that everyone in their feed has. Buying something that doesn't photograph well.</p>
+      </div>
+      <div class="persona-section">
+        <h4>Ad angle that converts</h4>
+        <p>"Your aura called. It wants upgrading." Pop culture spiritual language. Trend-adjacent. Aesthetic first, meaning second.</p>
+      </div>
+      <div class="persona-section">
+        <h4>Creative format</h4>
+        <p>Reels with trending audio, GRWM, haul videos, "spiritual girl" aesthetic content, meme-adjacent spiritual content, quick Reels with text overlays</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Persona 6 -->
+  <div class="persona">
+    <div class="persona-header">
+      <div class="persona-avatar" style="background:#E5F5E8; color: var(--green);">🎁</div>
+      <div class="persona-meta">
+        <h3>The Gifter</h3>
+        <span class="sub">Age 25–55 · All demographics · Occasion-driven · Budget ₹1,500–₹15,000</span>
+      </div>
+    </div>
+    <div class="persona-body">
+      <div class="persona-section">
+        <h4>What they want</h4>
+        <p>A meaningful gift that shows thoughtfulness. Something better than a box of sweets. Gift for parents, spouse, boss, new home, wedding.</p>
+      </div>
+      <div class="persona-section">
+        <h4>What they fear</h4>
+        <p>Giving a gift that seems cheap or generic. Gifting something that arrives without beautiful packaging.</p>
+      </div>
+      <div class="persona-section">
+        <h4>Ad angle that converts</h4>
+        <p>"Some gifts carry blessings." Packaging showcase, gift-set bundles, Diwali/occasion gifting campaigns.</p>
+      </div>
+      <div class="persona-section">
+        <h4>Creative format</h4>
+        <p>Gift unboxing video, occasion-specific campaigns, "what to gift your spiritual mother" content, premium packaging photography</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: META ADS -->
+<section class="section" id="meta">
+  <div class="section-header">
+    <div class="section-num">Section 04</div>
+    <h2 class="section-title">Meta Ads Targeting Strategy</h2>
+  </div>
+
+  <div class="insight">
+    The best performing Meta audiences for Gawri Ganga will be found at the intersection of spiritual interests and specific behavioural signals — not broad spiritual categories alone. Layering is essential.
+  </div>
+
+  <h3>Primary interest targeting clusters</h3>
+  <div class="grid-2">
+    <div class="card teal">
+      <div class="card-title">Cluster A — Devotional core</div>
+      <div class="card-body">
+        Hinduism · Mahadev / Shiva devotion · Rudraksha · Japa meditation · Pilgrimage (Haridwar, Kashi, Rishikesh) · ISKCON / Bhakti · Pandit / Puja · Hanuman Chalisa · Shiv Tandav · Sanatana Dharma
+        <br><br>
+        <strong>Best for:</strong> Faith-driven buyers, high intent. Lower CAC, higher LTV.
+      </div>
+    </div>
+    <div class="card purple">
+      <div class="card-title">Cluster B — Wellness & meditation</div>
+      <div class="card-body">
+        Yoga · Meditation · Mindfulness · Chakra healing · Pranayama · Ayurveda · Sound healing · Reiki · Crystal healing · Holistic wellness · Art of Living (Sri Sri) · Sadhguru / Isha Foundation · BKS Iyengar
+        <br><br>
+        <strong>Best for:</strong> Practice-driven buyers. Medium intent. Good ROAS for aura sprays and malas.
+      </div>
+    </div>
+    <div class="card gold">
+      <div class="card-title">Cluster C — Manifestation & astrology</div>
+      <div class="card-body">
+        Manifestation · Law of attraction · Astrology · Numerology · Moon rituals · Mercury retrograde · Tarot · Energy healing · Spiritual awakening · Vedic astrology · Nadi astrology · Kundli
+        <br><br>
+        <strong>Best for:</strong> Modern spiritual + Gen Z audience. Good for aura sprays and bracelets.
+      </div>
+    </div>
+    <div class="card coral">
+      <div class="card-title">Cluster D — Luxury wellness</div>
+      <div class="card-body">
+        Luxury lifestyle · Conscious living · Sustainable luxury · Premium wellness · Spa & self-care · Organic lifestyle · High-end gifting · Corporate wellness
+        <br><br>
+        <strong>Best for:</strong> HNI gifters and luxury spiritual buyers. Higher AOV campaigns.
+      </div>
+    </div>
+  </div>
+
+  <h3>Layered audience combinations</h3>
+  <table class="target-table">
+    <thead>
+      <tr>
+        <th>Audience Layer</th>
+        <th>Primary Interest</th>
+        <th>Layered With</th>
+        <th>Product Match</th>
+        <th>Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Shiva Devotee + Shopper</td>
+        <td>Mahadev / Rudraksha</td>
+        <td>Online shopping behaviour + Engaged shoppers</td>
+        <td>Rudraksha malas</td>
+        <td><span class="priority-dot dot-high"></span>High</td>
+      </tr>
+      <tr>
+        <td>Yoga Practitioner + Wellness</td>
+        <td>Yoga / Meditation</td>
+        <td>Holistic health + Sadhguru followers</td>
+        <td>Malas + Aura sprays</td>
+        <td><span class="priority-dot dot-high"></span>High</td>
+      </tr>
+      <tr>
+        <td>Manifestation + Gen Z</td>
+        <td>Manifestation / Crystals</td>
+        <td>Age 18–30 + Instagram Reels engagement</td>
+        <td>Bracelets + Aura sprays</td>
+        <td><span class="priority-dot dot-high"></span>High</td>
+      </tr>
+      <tr>
+        <td>Festival Gifter</td>
+        <td>Diwali / Festive season</td>
+        <td>Gift buying behaviour + Family-oriented</td>
+        <td>Gift sets + Malas</td>
+        <td><span class="priority-dot dot-high"></span>High</td>
+      </tr>
+      <tr>
+        <td>Astrology + Healing</td>
+        <td>Vedic astrology</td>
+        <td>Chakra / Energy healing</td>
+        <td>Specific Mukhi malas</td>
+        <td><span class="priority-dot dot-med"></span>Medium</td>
+      </tr>
+      <tr>
+        <td>Luxury Wellness</td>
+        <td>Premium lifestyle</td>
+        <td>HHI targeting + Online luxury behaviour</td>
+        <td>Rare Rudraksha + Kits</td>
+        <td><span class="priority-dot dot-med"></span>Medium</td>
+      </tr>
+      <tr>
+        <td>NRI Devotee</td>
+        <td>Hinduism / Indian culture</td>
+        <td>Location: USA/UK/UAE/Canada + Indian diaspora</td>
+        <td>Full catalogue</td>
+        <td><span class="priority-dot dot-high"></span>High</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Geographic targeting</h3>
+  <div class="grid-2">
+    <div class="card primary">
+      <div class="card-title">Tier 1 — India (primary)</div>
+      <div class="card-body">
+        <strong>States:</strong> Maharashtra, Delhi, Gujarat, Karnataka, Tamil Nadu, Telangana, Rajasthan, UP, West Bengal<br><br>
+        <strong>Cities (top priority):</strong> Mumbai, Delhi, Bengaluru, Hyderabad, Ahmedabad, Chennai, Pune, Jaipur, Kolkata, Surat, Varanasi, Rishikesh<br><br>
+        <em>Note: Varanasi, Rishikesh, Haridwar audiences have extremely high Rudraksha purchase intent even at small volume.</em>
+      </div>
+    </div>
+    <div class="card gold">
+      <div class="card-title">Tier 2 — NRI Global (high value)</div>
+      <div class="card-body">
+        <strong>USA:</strong> New York, New Jersey, Dallas, Chicago, Bay Area, Houston<br><br>
+        <strong>UAE:</strong> Dubai, Abu Dhabi (massive NRI Indian community)<br><br>
+        <strong>UK:</strong> London, Leicester, Birmingham<br><br>
+        <strong>Canada:</strong> Toronto, Brampton, Vancouver<br><br>
+        <em>NRI buyers are 3–5x higher AOV, gift heavily, and trust premium Indian spiritual brands.</em>
+      </div>
+    </div>
+  </div>
+
+  <h3>Demographics overview</h3>
+  <div class="grid-3">
+    <div class="card teal">
+      <div class="card-title">Age split</div>
+      <div class="card-body">
+        <strong>18–24:</strong> 15% — Bracelets, aura sprays<br>
+        <strong>25–34:</strong> 35% — All products<br>
+        <strong>35–44:</strong> 30% — Malas, healing<br>
+        <strong>45–60:</strong> 20% — Premium, gifting
+      </div>
+    </div>
+    <div class="card purple">
+      <div class="card-title">Gender split</div>
+      <div class="card-body">
+        <strong>Women 65%:</strong> Wellness, aura sprays, spiritual identity, gifting<br><br>
+        <strong>Men 35%:</strong> Rudraksha malas, faith-driven, specific Mukhi for goals
+      </div>
+    </div>
+    <div class="card coral">
+      <div class="card-title">Income targeting</div>
+      <div class="card-body">
+        <strong>₹3–8L/yr:</strong> Entry products, bracelets<br>
+        <strong>₹8–20L/yr:</strong> Core catalogue<br>
+        <strong>₹20L+/yr:</strong> Premium, rare, gifting
+      </div>
+    </div>
+  </div>
+
+  <div class="callout success">
+    <div class="callout-icon">✓</div>
+    <div class="callout-body"><strong>Lowest CAC audiences:</strong> Rudraksha + online shopping behaviour (India) and NRI Hindu devotee segments (UAE/USA). Both combine high purchase intent with willingness to pay premium prices, yielding the best ROAS. Start budget here before scaling.</div>
+  </div>
+</section>
+
+<!-- SECTION 5: PSYCHOLOGY -->
+<section class="section" id="psychology">
+  <div class="section-header">
+    <div class="section-num">Section 05</div>
+    <h2 class="section-title">Buyer Psychology & Content Strategy</h2>
+  </div>
+
+  <div class="insight">
+    People do not buy Rudraksha because they want a necklace. They buy it because they want to be a different version of themselves — more protected, more aligned, more at peace. Every piece of content must speak to that transformation, not the product.
+  </div>
+
+  <h3>Core psychological drivers</h3>
+  <div class="grid-2">
+    <div class="card primary">
+      <div class="card-title">Why they really buy</div>
+      <div class="card-body">
+        <strong>Anxiety reduction:</strong> "This will protect me" is a more powerful purchase driver than "this looks beautiful." Lean into protection.<br><br>
+        <strong>Identity solidification:</strong> Wearing a mala signals to yourself and others "I am a spiritual person." It is a commitment device.<br><br>
+        <strong>Desire for ritual:</strong> Modern life lacks ritual. These products create daily rituals that give life meaning and structure.<br><br>
+        <strong>Spiritual FOMO:</strong> "If everyone in my circle is using this and experiencing results, I should too."<br><br>
+        <strong>Placebo as power:</strong> Belief in the product's efficacy creates real psychological benefits — reduced anxiety, increased confidence. The product works because the buyer believes.
+      </div>
+    </div>
+    <div class="card teal">
+      <div class="card-title">Psychological frameworks to deploy</div>
+      <div class="card-body">
+        <strong>Transformation arc:</strong> Before state (anxious, disconnected) → Product as catalyst → After state (calm, protected, aligned)<br><br>
+        <strong>Scarcity + sacred:</strong> "Only 7 pieces of this Mukhi available" lands harder when the product is spiritually rare, not just commercially limited<br><br>
+        <strong>Social proof + authority:</strong> Both types needed — aspirational (celebrities using it) and relatable (people like me using it)<br><br>
+        <strong>Ritual psychology:</strong> Show the product as part of a daily practice, not a one-time purchase<br><br>
+        <strong>Gift guilt + love:</strong> "Your parents spent a lifetime devoted — give them something sacred." Gifting emotion is extremely powerful.
+      </div>
+    </div>
+  </div>
+
+  <h3>Ad angles that convert</h3>
+  <div class="pillar">
+    <div class="pillar-num">1</div>
+    <div class="pillar-content">
+      <h4>The Protection Angle</h4>
+      <p>"5 Mukhi Rudraksha has been worn by sadhus for 5,000 years to ward off fear and invite clarity. Here's what happened when 200 of our customers wore it for 21 days." Hook: ancient authority + modern proof. Works best for cold audience of devotional cluster.</p>
+    </div>
+  </div>
+  <div class="pillar">
+    <div class="pillar-num">2</div>
+    <div class="pillar-content">
+      <h4>The Transformation Angle</h4>
+      <p>"I was anxious, scattered, and spiritually disconnected — until I began wearing this mala." First-person testimonial arc. Start with pain, introduce product, show changed life. Works exceptionally well as video UGC for retargeting warm audiences.</p>
+    </div>
+  </div>
+  <div class="pillar">
+    <div class="pillar-num">3</div>
+    <div class="pillar-content">
+      <h4>The Ritual Lifestyle Angle</h4>
+      <p>Show the product embedded in a beautiful, intentional life — morning puja, meditation corner, journaling, yoga practice. No hard sell. Pure aspiration. "This is who you become when you live consciously." Best for modern wellness and Gen Z audiences.</p>
+    </div>
+  </div>
+  <div class="pillar">
+    <div class="pillar-num">4</div>
+    <div class="pillar-content">
+      <h4>The Authenticity / Education Angle</h4>
+      <p>"3 signs your Rudraksha is fake (and how to know ours isn't)." Builds trust by acknowledging the biggest fear in the category. Demonstrates expertise. Drives consideration purchases from high-intent researchers. Best for Reels and YouTube Shorts.</p>
+    </div>
+  </div>
+  <div class="pillar">
+    <div class="pillar-num">5</div>
+    <div class="pillar-content">
+      <h4>The Gifting Angle</h4>
+      <p>"The most meaningful Diwali gift you'll ever give." Target gift buyers in the 4–6 week window before every major festival. Showcase premium packaging, personalisation, and emotional resonance. Drives very high AOV purchases from an audience that otherwise may not have bought for themselves.</p>
+    </div>
+  </div>
+  <div class="pillar">
+    <div class="pillar-num">6</div>
+    <div class="pillar-content">
+      <h4>The Astrology / Mukhi Match Angle</h4>
+      <p>"Which Rudraksha is aligned with your zodiac sign?" Combines astrology interest (enormous audience) with product education. Interactive content works brilliantly — quiz format, "find your mala" tool. Reduces decision paralysis and drives conversion of hesitant buyers.</p>
+    </div>
+  </div>
+
+  <h3>Content pillars</h3>
+  <div class="grid-3">
+    <div class="card teal">
+      <div class="card-title">Education (30%)</div>
+      <div class="card-body">Mukhi benefits explained · How to identify genuine Rudraksha · History and mythology · Mantra + mala how-to · Aura science explained</div>
+    </div>
+    <div class="card purple">
+      <div class="card-title">Transformation (25%)</div>
+      <div class="card-body">Customer testimonials · Before/after spiritual journey · "21 days wearing this" series · Life change stories · Emotional unboxings</div>
+    </div>
+    <div class="card gold">
+      <div class="card-title">Ritual & lifestyle (25%)</div>
+      <div class="card-body">Morning puja routine · Meditation sessions · Space cleansing rituals · Aura spray ASMR · Intentional living aesthetic content</div>
+    </div>
+    <div class="card coral">
+      <div class="card-title">Social proof (10%)</div>
+      <div class="card-body">UGC reposts · Influencer wearing content · Celebrity mentions · Community testimonials · Review showcases</div>
+    </div>
+    <div class="card green">
+      <div class="card-title">Product & offers (10%)</div>
+      <div class="card-body">New launches · Limited editions · Festival gift sets · Bundle promotions · Behind the scenes crafting</div>
+    </div>
+  </div>
+
+  <h3>Influencer strategy</h3>
+  <div class="grid-2">
+    <div class="card green">
+      <div class="card-title">Tier 1 — High impact</div>
+      <div class="card-body">
+        <strong>Yoga teachers</strong> with 50K–500K following<br>
+        <strong>Spiritual lifestyle creators</strong> (sadhvi/monk aesthetic)<br>
+        <strong>Astrologers</strong> on YouTube and Instagram<br>
+        <strong>Ayurveda & holistic health creators</strong><br><br>
+        <em>These audiences have the highest purchase intent and lowest CAC.</em>
+      </div>
+    </div>
+    <div class="card purple">
+      <div class="card-title">Tier 2 — Scale & awareness</div>
+      <div class="card-body">
+        <strong>Mindful living creators</strong> (journaling, slow life)<br>
+        <strong>Fashion-spiritual fusion influencers</strong><br>
+        <strong>NRI cultural creators</strong> in USA/UAE/UK<br>
+        <strong>Meditation app communities</strong><br><br>
+        <em>Good for top-of-funnel awareness at scale.</em>
+      </div>
+    </div>
+  </div>
+
+  <h3>Landing page psychology</h3>
+  <div class="grid-3">
+    <div class="card primary">
+      <div class="card-title">Above the fold</div>
+      <div class="card-body">Transformation headline (not product feature) · Single beautiful product image in ritual context · Social proof number ("10,000+ seekers trust us")</div>
+    </div>
+    <div class="card teal">
+      <div class="card-title">Middle page</div>
+      <div class="card-body">Authenticity proof (sourcing story, certification) · Education block (Mukhi significance) · Video testimonial · Trust badges (COD, returns, authenticity guarantee)</div>
+    </div>
+    <div class="card coral">
+      <div class="card-title">Below fold / CTA</div>
+      <div class="card-body">Scarcity (limited stock of specific Mukhi) · Urgency (dispatch timeline) · Risk reversal (30-day return) · Community reinforcement ("Join X spiritual seekers")</div>
+    </div>
+  </div>
+
+  <h3>What will increase ROAS</h3>
+  <div class="callout success">
+    <div class="callout-icon">✓</div>
+    <div class="callout-body"><strong>Top 3 ROAS multipliers for this brand:</strong> (1) Video testimonial ads — first-person transformation stories consistently outperform product showcases by 2–4x in spiritual wellness. (2) Education-first Reels that explain Mukhi benefits, watched 70%+ before CTA — warm audiences retargeted from these convert at 6–12x cold audience rates. (3) Festival gifting campaigns (Diwali, Navratri, Maha Shivratri) — AOV triples and intent is near-peak. Plan 6 weeks of gifting creative before each major festival.</div>
+  </div>
+
+  <div class="callout info">
+    <div class="callout-icon">◈</div>
+    <div class="callout-body"><strong>Single most important strategic insight:</strong> The biggest conversion unlock for Gawri Ganga is not better targeting — it is better trust architecture. In a category where fake products are the #1 fear, any brand that systematically proves authenticity through sourcing videos, certification, founder story, and pandit endorsement will outperform competitors on the same audience at half the CAC. Build trust first. Scale ads second.</div>
+  </div>
+</section>
+
+<div class="footer">
+  Gawri Ganga — D2C Brand Strategy Report &nbsp;·&nbsp; Prepared for Internal Strategy Use &nbsp;·&nbsp; All Sections Confidential
+</div>
+
+</body>
+</html>
